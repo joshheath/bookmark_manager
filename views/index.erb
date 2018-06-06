@@ -1,7 +1,19 @@
 <%=styled_flash%>
 
+<!-- <ul>
+  <% @bookmarks.each do |bookmark| %>
+    <li id="bookmark-<%= bookmark.id %>">
+      <a href="<%= bookmark.url %>" target="url">
+      </a>
+    </li>
+<% end %>
+</ul> -->
 <ul>
   <% @bookmarks.each do |bookmark| %>
-    <li><%= bookmark %></li>
+    <li>
+      <a href="<%= bookmark.url %>">
+        <%= bookmark.id %>
+      </a>
+    </li>
   <% end %>
 </ul>

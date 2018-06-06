@@ -3,7 +3,6 @@ require 'pg'
 class Bookmark
   attr_reader :id, :url
 
-
   def initialize(id, url)
     @id = id
     @url = url
@@ -27,7 +26,7 @@ class Bookmark
         connection = PG.connect(dbname: 'bookmark_manager')
       end
 
-      return false unless is_url?(options[:url])
+      # return false unless is_url?(options[:url])
       result = connection.exec("INSERT INTO bookmarks (url) VALUES('#{options[:url]}') RETURNING id, url")
       Bookmark.new(result.first['id'], result.first['url'])
     end

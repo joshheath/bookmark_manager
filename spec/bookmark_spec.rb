@@ -4,9 +4,9 @@ describe Bookmark do
   describe '.all' do
     it 'returns all bookmarks in an array' do
       # Add the test data
-      bookmark_1 = Bookmark.create(url: "http://makersacademy.com")
-      bookmark_2 = Bookmark.create(url: "http://destroyallsoftware.com")
-      bookmark_3 = Bookmark.create(url: "http://google.com")
+      bookmark_1 = Bookmark.create(id: "test 1",url: "http://makersacademy.com")
+      bookmark_2 = Bookmark.create(id: "test 2",url: "http://destroyallsoftware.com")
+      bookmark_3 = Bookmark.create(id: "test 3",url: "http://google.com")
 
       expected_bookmarks = [
         bookmark_1,
@@ -19,7 +19,7 @@ describe Bookmark do
 
   describe '.create' do
     it 'creates a new bookmark' do
-      bookmark = Bookmark.create(url: 'http://www.testbookmark.com')
+      bookmark = Bookmark.create(id: "test", url: 'http://www.testbookmark.com')
       expect(Bookmark.all).to include bookmark
     end
 
