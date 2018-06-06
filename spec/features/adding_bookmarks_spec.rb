@@ -10,4 +10,12 @@ feature 'Adding bookmarks' do
 
     expect(page).to have_content 'http://testbookmark.com'
   end
+
+  scenario 'A user enter an invalid URL' do
+    visit('/bookmarks/new')
+    fill_in('url', with: 'This is not a valid URL')
+    click_button('Submit')
+    expect(page).not_to have_content "This is not a valid URL"
+    expect(page).to have_content "You must enter a valid URL"
+  end
 end
