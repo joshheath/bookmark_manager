@@ -1,7 +1,7 @@
 #bookmark manager
 Makers Academy week 4 pairing challenges, aimed at satisfying the following user stories:
 
-As a website user,
+As a website user
 So I can see what pages I've bookmarked
 I want to see a list of bookmarks
 
